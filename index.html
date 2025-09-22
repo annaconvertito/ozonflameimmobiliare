@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ville Ozon Flame - Caserta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0d2f5a;
+            --primary: #1e4a7a;
+            --primary-light: #2c5f92;
+            --accent: #d4af37;
+            --light: #f5f5f5;
+            --dark: #222;
+            --text: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
+            padding-top: 80px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text span:first-child {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('whatsapp-2025-09-15-15-26-23-2.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0.5rem auto;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 5rem 0;
+        }
+        
+        .projects-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(13, 47, 90, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-btn {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .project-btn:hover {
+            background: white;
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .project-category {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .project-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-feature {
+            background: var(--light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .project-link:hover {
+            color: var(--accent);
+        }
+        
+        .project-link i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .project-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .contact-details i {
+            margin-right: 15px;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-content .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content .logo span:first-child {
+            color: var(--accent);
+        }
+        
+        .footer-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.8rem;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Modal a tutta pagina */
+        .details-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.95);
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .details-modal-content {
+            background-color: #fefefe;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
+            animation: modalopen 0.4s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .details-modal-close {
+            position: fixed;
+            top: 25px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            background: rgba(0,0,0,0.7);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .details-modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+            background: rgba(0,0,0,0.9);
+        }
+        
+        .modal-header {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal-header h2 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .modal-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .modal-tabs {
+            display: flex;
+            background: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .modal-tab {
+            padding: 1.2rem 2rem;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            flex: 1;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .modal-tab.active {
+            background: white;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .modal-tab:hover {
+            background: var(--primary-light);
+        }
+        
+        .modal-tab-content {
+            display: none;
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .modal-tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .modal-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .modal-feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--accent);
+            height: 100%;
+        }
+        
+        .modal-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .modal-feature-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .modal-feature-card p {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .modal-plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        .modal-plan-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .modal-plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .modal-plan-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .modal-plan-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            transition: transform 0.5s;
+        }
+        
+        .modal-plan-card:hover .modal-plan-image img {
+            transform: scale(1.03);
+        }
+        
+        .modal-plan-content {
+            padding: 2rem;
+        }
+        
+        .modal-plan-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .modal-plan-content p {
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .modal-plan-features {
+            list-style-type: none;
+            margin-top: 1.5rem;
+        }
+        
+        .modal-plan-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        
+        .modal-plan-features i {
+            color: var(--accent);
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .modal-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .modal-gallery-item {
+            height: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+        
+        .modal-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .modal-gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        
+        /* Modal per zoom immagini */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.95);
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .zoom-modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: zoom 0.3s;
+        }
+        
+        @keyframes zoom {
+            from {transform: translate(-50%, -50%) scale(0.9)}
+            to {transform: translate(-50%, -50%) scale(1)}
+        }
+        
+        .zoom-modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 3001;
+            background: rgba(0,0,0,0.7);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .zoom-modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+            background: rgba(0,0,0,0.9);
+        }
+        
+        .zoom-modal-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .contact-details p {
+                font-size: 1rem;
+            }
+            
+            .modal-tabs {
+                flex-direction: column;
+            }
+            
+            .modal-tab {
+                padding: 1rem;
+            }
+            
+            .modal-tab-content {
+                padding: 1.5rem;
+            }
+            
+            .modal-plans-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-modal-close {
+                top: 15px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+            
+            .modal-header {
+                padding: 1.5rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 2rem;
+            }
+            
+            .zoom-modal-content {
+                width: 95%;
+            }
+            
+            .zoom-modal-close {
+                top: 15px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="doc1_page-0001.png" alt="OZON FLAME Logo" style="width: 50px; height: 50px;">
+                <div class="logo-text"><span>OZON</span><span>FLAME</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Progetti</a></li>
+                    <li><a href="#" onclick="openDetailsModal(); return false;">Dettagli</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ville Ozon Flame</h1>
+            <p>Un nuovo concetto dell'abitare prende vita a Caserta</p>
+            <a href="#projects" class="btn">Scopri i nostri progetti</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>I Nostri Progetti</h2>
+            <p class="projects-intro">Scopri l'eccellenza e l'innovazione nei nostri sviluppi residenziali. Ville Ozon Flame rappresenta il nostro fiore all'occhiello, un progetto che unisce design contemporaneo, sostenibilità e comfort abitativo.</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 - Ville Ozon Flame -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Ville Ozon Flame">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" onclick="openDetailsModal(); return false;" class="project-btn"><i class="fas fa-search"></i></a>
+                                <a href="#contact" class="project-btn"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Residenziale - Completato</span>
+                        <h3>Ville Ozon Flame</h3>
+                        <p class="project-description">Un esclusivo complesso residenziale composto da 5 ville a schiera indipendenti nel cuore della zona Massaro a Caserta.</p>
+                        <div class="project-features">
+                            <span class="project-feature">Classe A</span>
+                            <span class="project-feature">Antisismico</span>
+                            <span class="project-feature">Fotovoltaico</span>
+                        </div>
+                        <a href="#" onclick="openDetailsModal(); return false;" class="project-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contatti</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informazioni di contatto</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Via Morandi, Zona Massaro, Caserta</p>
+                        <p><i class="fas fa-phone"></i> Alessandro: 3929015170</p>
+                        <p><i class="fas fa-phone"></i> Giuseppe: 3889027498</p>
+                        <p><i class="fas fa-envelope"></i> ozonflamesrl@gmail.com</p>
+                        <p><i class="fas fa-globe"></i> www.ozonflameimmobiliare.com</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Richiedi informazioni</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome e Cognome</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Messaggio</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Invia richiesta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <span>OZON</span><span>FLAME</span>
+            </div>
+            <p>Un nuovo concetto dell'abitare</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Ville Ozon Flame. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- Modale Dettagli a tutta pagina -->
+    <div id="detailsModal" class="details-modal">
+        <div class="details-modal-content">
+            <span class="details-modal-close" onclick="closeDetailsModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h2>Dettagli Ville Ozon Flame</h2>
+                <p>Scopri tutte le caratteristiche, planimetrie e immagini delle nostre esclusive ville</p>
+            </div>
+            
+            <div class="modal-tabs">
+                <div class="modal-tab active" onclick="openTab(event, 'features-tab')">Caratteristiche</div>
+                <div class="modal-tab" onclick="openTab(event, 'plans-tab')">Planimetrie</div>
+                <div class="modal-tab" onclick="openTab(event, 'gallery-tab')">Galleria</div>
+            </div>
+            
+            <div id="features-tab" class="modal-tab-content active">
+                <h2>Caratteristiche delle Ville</h2>
+                <p>Le Ville Ozon Flame rappresentano l'eccellenza abitativa, con attenzione ai dettagli, qualità dei materiali e soluzioni tecnologiche all'avanguardia.</p>
+                <div class="modal-features-grid">
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">⚡</div>
+                        <h3>Efficienza Energetica</h3>
+                        <p>5 unità abitative completamente indipendenti in classe energetica "A" con isolamento termico avanzato e ridotte dispersioni energetiche.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🏠</div>
+                        <h3>Struttura Antisismica</h3>
+                        <p>Progettate nel totale rispetto della normativa antisismica con materiali di prima qualità e tecniche costruttive all'avanguardia.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">☀️</div>
+                        <h3>Impianto Fotovoltaico</h3>
+                        <p>Impianto fotovoltaico 3KW completo predisposto al sistema di accumulo per massimizzare l'autonomia energetica e ridurre i costi.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🔒</div>
+                        <h3>Serramenti di Qualità</h3>
+                        <p>Infissi in PVC a taglio termico e porte esterne in ferro blindate per massima sicurezza ed efficienza energetica.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🏊</div>
+                        <h3>Personalizzazioni</h3>
+                        <p>Possibilità di realizzare piscina nel cortile interno su richiesta e personalizzazioni degli spazi in base alle esigenze.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🌿</div>
+                        <h3>Spazi Verdi</h3>
+                        <p>Ampi spazi esterni privati e aree verdi comuni con piante autoctone e sistemi di irrigazione efficienti.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="plans-tab" class="modal-tab-content">
+                <h2>Planimetrie delle Ville</h2>
+                <p>Le ville sono sviluppate su più livelli con spazi ben distribuiti e ottimizzati per garantire comfort e funzionalità. Clicca sulle planimetrie per ingrandirle.</p>
+                <div class="modal-plans-container">
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-1-page-0001.jpg', 'Piano Terra')">
+                            <img src="pdf-1-page-0001.jpg" alt="Piano Terra">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Piano Terra</h3>
+                            <p>Ampio soggiorno open space, cucina abitabile, bagno di servizio e spazio esterno privato con accesso indipendente.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-door-open"></i> Ingresso indipendente</li>
+                                <li><i class="fas fa-utensils"></i> Cucina abitabile con isola centrale</li>
+                                <li><i class="fas fa-couch"></i> Soggiorno luminoso con ampia vetrata</li>
+                                <li><i class="fas fa-toilet"></i> Bagno di servizio con doccia</li>
+                                <li><i class="fas fa-tree"></i> Veranda esterna coperta</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-2-page-0001.jpg', 'Piano Primo')">
+                            <img src="pdf-2-page-0001.jpg" alt="Piano Primo">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Piano Primo</h3>
+                            <p>Camera matrimoniale, camera singola, bagno completo e ripostiglio. Layout ottimizzato per comfort e privacy.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-bed"></i> Camera matrimoniale con vista</li>
+                                <li><i class="fas fa-bed"></i> Camera singola con armadio a muro</li>
+                                <li><i class="fas fa-bath"></i> Bagno completo con box doccia</li>
+                                <li><i class="fas fa-box"></i> Ripostiglio/ lavanderia</li>
+                                <li><i class="fas fa-window-maximize"></i> Ampio corridoio di distribuzione</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Piano Secondo')">
+                            <img src="pdf-3-page-0001.jpg" alt="Piano Secondo">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Piano Secondo</h3>
+                            <p>Suite padronale con camera matrimoniale, cabina armadio e bagno privato. Uno spazio esclusivo e raffinato.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-bed"></i> Camera matrimoniale con zona relax</li>
+                                <li><i class="fas fa-archive"></i> Cabina armadio su misura</li>
+                                <li><i class="fas fa-bath"></i> Bagno privato con vasca e doccia</li>
+                                <li><i class="fas fa-door-closed"></i> Accesso indipendente</li>
+                                <li><i class="fas fa-tv"></i> Predisposizione home theater</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-4-page-0001.jpg', 'Piano Terzo')">
+                            <img src="pdf-4-page-0001.jpg" alt="Piano Terzo">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Piano Terzo</h3>
+                            <p>Locale sottotetto versatile e spazioso, perfetto per studio, sala hobby o ulteriore camera da letto.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-couch"></i> Spazio versatile e personalizzabile</li>
+                                <li><i class="fas fa-window-maximize"></i> Lucernari per illuminazione naturale</li>
+                                <li><i class="fas fa-boxes"></i> Ampio spazio storage integrato</li>
+                                <li><i class="fas fa-plus"></i> Possibilità di personalizzazione</li>
+                                <li><i class="fas fa-door-open"></i> Accesso indipendente</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-5-page-0001.jpg', 'Prospetto Frontale')">
+                            <img src="pdf-5-page-0001.jpg" alt="Prospetto Frontale">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Prospetto Frontale</h3>
+                            <p>Vista su Via Morandi con design moderno ed elegante che si integra perfettamente con il contesto urbano.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-home"></i> Design contemporaneo e lineare</li>
+                                <li><i class="fas fa-tree"></i> Integrazione con contesto naturale</li>
+                                <li><i class="fas fa-palette"></i> Finiture di pregio e materiali selezionati</li>
+                                <li><i class="fas fa-parking"></i> Zona esterna curata e privata</li>
+                                <li><i class="fas fa-paint-roller"></i> Facciata con rivestimento di qualità</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gallery-tab" class="modal-tab-content">
+                <h2>Galleria Immagini</h2>
+                <p>Scopri attraverso le immagini la qualità costruttiva e l'eleganza delle Ville Ozon Flame. Clicca sulle immagini per ingrandirle.</p>
+                <div class="modal-gallery-grid">
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Esterno villa')">
+                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Esterno villa">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-1.jpeg', 'Interno moderno')">
+                        <img src="whatsapp-2025-09-15-15-26-23-1.jpeg" alt="Interno moderno">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-4.jpeg', 'Prospetto frontale')">
+                        <img src="whatsapp-2025-09-15-15-26-23-4.jpeg" alt="Prospetto frontale">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-1.jpeg', 'Dettaglio esterno')">
+                        <img src="whatsapp-2025-09-15-15-26-28-1.jpeg" alt="Dettaglio esterno">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-3.jpeg', 'Vista laterale')">
+                        <img src="whatsapp-2025-09-15-15-26-28-3.jpeg" alt="Vista laterale">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-4.jpeg', 'Dettaglio costruzione')">
+                        <img src="whatsapp-2025-09-15-15-26-28-4.jpeg" alt="Dettaglio costruzione">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per zoom immagini -->
+    <div id="zoomModal" class="zoom-modal">
+        <span class="zoom-modal-close" onclick="closeZoomModal()">&times;</span>
+        <img class="zoom-modal-content" id="zoomedImage">
+        <div class="zoom-modal-caption" id="zoomCaption"></div>
+    </div>
+
+    <script>
+        // Funzione per aprire il modale dei dettagli
+        function openDetailsModal() {
+            document.getElementById('detailsModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Funzione per chiudere il modale dei dettagli
+        function closeDetailsModal() {
+            document.getElementById('detailsModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Funzione per aprire il modale di zoom
+        function openZoomModal(imageSrc, caption) {
+            document.getElementById('zoomModal').style.display = 'block';
+            document.getElementById('zoomedImage').src = imageSrc;
+            document.getElementById('zoomCaption').textContent = caption;
+        }
+        
+        // Funzione per chiudere il modale di zoom
+        function closeZoomModal() {
+            document.getElementById('zoomModal').style.display = 'none';
+        }
+        
+        // Chiudi i modali se si clicca al di fuori del contenuto
+        window.onclick = function(event) {
+            const detailsModal = document.getElementById('detailsModal');
+            const zoomModal = document.getElementById('zoomModal');
+            
+            if (event.target == detailsModal) {
+                closeDetailsModal();
+            }
+            if (event.target == zoomModal) {
+                closeZoomModal();
+            }
+        }
+        
+        // Chiudi i modali con il tasto ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDetailsModal();
+                closeZoomModal();
+            }
+        });
+        
+        // Gestione delle tab nel modale
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('modal-tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            const tabs = document.getElementsByClassName('modal-tab');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple form validation
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if (name && email && message) {
+                    alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
+                    contactForm.reset();
+                } else {
+                    alert('Per favore, compila tutti i campi obbligatori.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
