@@ -396,7 +396,8 @@
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.8rem 1rem;
             border: none;
@@ -923,7 +924,6 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#projects">Progetti</a></li>
-                    <li><a href="#" onclick="openDetailsModal(); return false;">Dettagli</a></li>
                     <li><a href="#contact">Contatti</a></li>
                 </ul>
             </nav>
@@ -933,8 +933,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Ville Ozon Flame</h1>
-            <p>Un nuovo concetto dell'abitare prende vita a Caserta</p>
+            <h1>Ozon Flame Immobiliare</h1>
+            <p>Eccellenza costruttiva e innovazione abitativa a Caserta</p>
             <a href="#projects" class="btn">Scopri i nostri progetti</a>
         </div>
     </section>
@@ -943,16 +943,40 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2>I Nostri Progetti</h2>
-            <p class="projects-intro">Scopri l'eccellenza e l'innovazione nei nostri sviluppi residenziali. Ville Ozon Flame rappresenta il nostro fiore all'occhiello, un progetto che unisce design contemporaneo, sostenibilità e comfort abitativo.</p>
+            <p class="projects-intro">Scopri l'eccellenza e l'innovazione nei nostri sviluppi residenziali. Qualità costruttiva, design contemporaneo e sostenibilità si uniscono per creare spazi unici.</p>
             
             <div class="projects-grid">
-                <!-- Project 1 - Ville Ozon Flame -->
+                <!-- Project 1 - Via Catena -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="WhatsApp Image 2025-09-16 at 14.50.59.jpeg" alt="Progetto Via Catena">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" onclick="openDetailsModal('via-catena'); return false;" class="project-btn"><i class="fas fa-search"></i></a>
+                                <a href="#contact" class="project-btn"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Residenziale - In Costruzione</span>
+                        <h3>Via Catena</h3>
+                        <p class="project-description">Nuovo complesso residenziale di prestigio con appartamenti di diverse metrature, finiture di qualità e ampio parcheggio.</p>
+                        <div class="project-features">
+                            <span class="project-feature">Classe A</span>
+                            <span class="project-feature">Parcheggio</span>
+                            <span class="project-feature">Ascensore</span>
+                        </div>
+                        <a href="#" onclick="openDetailsModal('via-catena'); return false;" class="project-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Ville Ozon Flame -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Ville Ozon Flame">
                         <div class="project-overlay">
                             <div class="project-actions">
-                                <a href="#" onclick="openDetailsModal(); return false;" class="project-btn"><i class="fas fa-search"></i></a>
+                                <a href="#" onclick="openDetailsModal('ville-ozon-flame'); return false;" class="project-btn"><i class="fas fa-search"></i></a>
                                 <a href="#contact" class="project-btn"><i class="fas fa-link"></i></a>
                             </div>
                         </div>
@@ -960,13 +984,13 @@
                     <div class="project-content">
                         <span class="project-category">Residenziale - Completato</span>
                         <h3>Ville Ozon Flame</h3>
-                        <p class="project-description">Un esclusivo complesso residenziale composto da 5 ville a schiera indipendenti nel cuore della zona Massaro a Caserta.</p>
+                        <p class="project-description">Esclusivo complesso di 5 ville a schiera indipendenti nel cuore della zona Massaro a Caserta.</p>
                         <div class="project-features">
                             <span class="project-feature">Classe A</span>
                             <span class="project-feature">Antisismico</span>
                             <span class="project-feature">Fotovoltaico</span>
                         </div>
-                        <a href="#" onclick="openDetailsModal(); return false;" class="project-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" onclick="openDetailsModal('ville-ozon-flame'); return false;" class="project-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1004,6 +1028,14 @@
                             <input type="tel" id="phone">
                         </div>
                         <div class="form-group">
+                            <label for="project">Progetto di interesse</label>
+                            <select id="project" required>
+                                <option value="">Seleziona un progetto</option>
+                                <option value="via-catena">Via Catena</option>
+                                <option value="ville-ozon-flame">Ville Ozon Flame</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="message">Messaggio</label>
                             <textarea id="message" required></textarea>
                         </div>
@@ -1020,34 +1052,121 @@
             <div class="logo">
                 <span>OZON</span><span>FLAME</span>
             </div>
-            <p>Un nuovo concetto dell'abitare</p>
+            <p>Eccellenza costruttiva e innovazione abitativa</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p>&copy; 2025 Ville Ozon Flame. Tutti i diritti riservati.</p>
+            <p>&copy; 2025 Ozon Flame Immobiliare. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
-    <!-- Modale Dettagli a tutta pagina -->
-    <div id="detailsModal" class="details-modal">
+    <!-- Modale Dettagli per Via Catena -->
+    <div id="detailsModal-via-catena" class="details-modal">
         <div class="details-modal-content">
-            <span class="details-modal-close" onclick="closeDetailsModal()">&times;</span>
+            <span class="details-modal-close" onclick="closeDetailsModal('via-catena')">&times;</span>
             
             <div class="modal-header">
-                <h2>Dettagli Ville Ozon Flame</h2>
-                <p>Scopri tutte le caratteristiche, planimetrie e immagini delle nostre esclusive ville</p>
+                <h2>Progetto Via Catena</h2>
+                <p>Nuovo complesso residenziale di prestigio in costruzione</p>
             </div>
             
             <div class="modal-tabs">
-                <div class="modal-tab active" onclick="openTab(event, 'features-tab')">Caratteristiche</div>
-                <div class="modal-tab" onclick="openTab(event, 'plans-tab')">Planimetrie</div>
-                <div class="modal-tab" onclick="openTab(event, 'gallery-tab')">Galleria</div>
-                <div class="modal-tab" onclick="openTab(event, 'video-tab')">Video</div>
+                <div class="modal-tab active" onclick="openTab(event, 'features-tab-catena')">Caratteristiche</div>
+                <div class="modal-tab" onclick="openTab(event, 'gallery-tab-catena')">Galleria</div>
             </div>
             
-            <div id="features-tab" class="modal-tab-content active">
+            <div id="features-tab-catena" class="modal-tab-content active">
+                <h2>Caratteristiche del Progetto</h2>
+                <p>Il complesso residenziale di Via Catena rappresenta l'evoluzione del concetto abitativo moderno, unendo comfort, tecnologia e design.</p>
+                <div class="modal-features-grid">
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🏗️</div>
+                        <h3>Struttura Moderna</h3>
+                        <p>Edificio realizzato con tecniche costruttive all'avanguardia e materiali di prima qualità per garantire massima sicurezza e durabilità.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">⚡</div>
+                        <h3>Efficienza Energetica</h3>
+                        <p>Classe energetica A con isolamento termico avanzato, impianto fotovoltaico e sistemi per il risparmio energetico.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🚗</div>
+                        <h3>Parcheggio Riservato</h3>
+                        <p>Ampio parcheggio scoperto con posti auto riservati per ogni unità abitativa e ospiti.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🌿</div>
+                        <h3>Spazi Verdi</h3>
+                        <p>Area verde comune curata con piante autoctone e spazi relax per i residenti.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🔒</div>
+                        <h3>Sicurezza</h3>
+                        <p>Sistema di videosorveglianza, controllo accessi e infissi di sicurezza per totale tranquillità.</p>
+                    </div>
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">🏠</div>
+                        <h3>Finiture di Qualità</h3>
+                        <p>Materiali selezionati, pavimenti in gres porcellanato, sanitari di design e cucine complete.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gallery-tab-catena" class="modal-tab-content">
+                <h2>Galleria Lavori</h2>
+                <p>Documentazione fotografica dello stato di avanzamento dei lavori del complesso di Via Catena.</p>
+                <div class="modal-gallery-grid">
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.50.52.jpeg', 'Prospetto principale')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.50.52.jpeg" alt="Prospetto principale">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.50.56.jpeg', 'Dettaglio costruttivo')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.50.56.jpeg" alt="Dettaglio costruttivo">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.01.jpeg', 'Vista laterale')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.51.01.jpeg" alt="Vista laterale">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.03.jpeg', 'Particolare facciata')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.51.03.jpeg" alt="Particolare facciata">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.06.jpeg', 'Area cantieristica')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.51.06.jpeg" alt="Area cantieristica">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.30.jpeg', 'Vista d\'insieme')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.51.30.jpeg" alt="Vista d'insieme">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.39.jpeg', 'Dettaglio strutturale')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.51.39.jpeg" alt="Dettaglio strutturale">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.51.jpeg', 'Particolare costruzione')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.51.51.jpeg" alt="Particolare costruzione">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.59.46.jpeg', 'Panoramica cantiere')">
+                        <img src="WhatsApp Image 2025-09-16 at 14.59.46.jpeg" alt="Panoramica cantiere">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Dettagli per Ville Ozon Flame -->
+    <div id="detailsModal-ville-ozon-flame" class="details-modal">
+        <div class="details-modal-content">
+            <span class="details-modal-close" onclick="closeDetailsModal('ville-ozon-flame')">&times;</span>
+            
+            <div class="modal-header">
+                <h2>Ville Ozon Flame</h2>
+                <p>Esclusivo complesso di 5 ville a schiera indipendenti - Completato</p>
+            </div>
+            
+            <div class="modal-tabs">
+                <div class="modal-tab active" onclick="openTab(event, 'features-tab-ville')">Caratteristiche</div>
+                <div class="modal-tab" onclick="openTab(event, 'gallery-tab-ville')">Galleria</div>
+                <div class="modal-tab" onclick="openTab(event, 'plans-tab-ville')">Planimetrie</div>
+            </div>
+            
+            <div id="features-tab-ville" class="modal-tab-content active">
                 <h2>Caratteristiche delle Ville</h2>
                 <p>Le Ville Ozon Flame rappresentano l'eccellenza abitativa, con attenzione ai dettagli, qualità dei materiali e soluzioni tecnologiche all'avanguardia.</p>
                 <div class="modal-features-grid">
@@ -1084,7 +1203,32 @@
                 </div>
             </div>
             
-            <div id="plans-tab" class="modal-tab-content">
+            <div id="gallery-tab-ville" class="modal-tab-content">
+                <h2>Galleria Immagini</h2>
+                <p>Scopri attraverso le immagini la qualità costruttiva e l'eleganza delle Ville Ozon Flame.</p>
+                <div class="modal-gallery-grid">
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Esterno villa')">
+                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Esterno villa">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-1.jpeg', 'Interno moderno')">
+                        <img src="whatsapp-2025-09-15-15-26-23-1.jpeg" alt="Interno moderno">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-1.jpeg', 'Dettaglio esterno')">
+                        <img src="whatsapp-2025-09-15-15-26-28-1.jpeg" alt="Dettaglio esterno">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-3.jpeg', 'Vista laterale')">
+                        <img src="whatsapp-2025-09-15-15-26-28-3.jpeg" alt="Vista laterale">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-4.jpeg', 'Dettaglio costruzione')">
+                        <img src="whatsapp-2025-09-15-15-26-28-4.jpeg" alt="Dettaglio costruzione">
+                    </div>
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-4.jpeg', 'Prospetto frontale')">
+                        <img src="whatsapp-2025-09-15-15-26-23-4.jpeg" alt="Prospetto frontale">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="plans-tab-ville" class="modal-tab-content">
                 <h2>Planimetrie delle Ville</h2>
                 <p>Le ville sono sviluppate su più livelli con spazi ben distribuiti e ottimizzati per garantire comfort e funzionalità. Clicca sulle planimetrie per ingrandirle.</p>
                 <div class="modal-plans-container">
@@ -1121,59 +1265,52 @@
                         </div>
                     </div>
                     <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Prospetti Esterni')">
-                            <img src="pdf-3-page-0001.jpg" alt="Prospetti Esterni">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Piano Secondo')">
+                            <img src="pdf-3-page-0001.jpg" alt="Piano Secondo">
                         </div>
                         <div class="modal-plan-content">
-                            <h3>Prospetti Esterni</h3>
-                            <p>Design contemporaneo con finiture di pregio e attenzione ai dettagli architettonici che caratterizzano l'intero complesso.</p>
+                            <h3>Piano Secondo</h3>
+                            <p>Suite padronale con camera matrimoniale, cabina armadio e bagno privato. Uno spazio esclusivo e raffinato.</p>
                             <ul class="modal-plan-features">
-                                <li><i class="fas fa-paint-roller"></i> Facciata con intonaco a rasatura</li>
-                                <li><i class="fas fa-th"></i> Zoccolatura in pietra naturale</li>
-                                <li><i class="fas fa-lightbulb"></i> Illuminazione esterna a LED</li>
-                                <li><i class="fas fa-car"></i> Parcheggio privato scoperto</li>
-                                <li><i class="fas fa-seedling"></i> Sistemazione a verde degli spazi esterni</li>
+                                <li><i class="fas fa-bed"></i> Camera matrimoniale con zona relax</li>
+                                <li><i class="fas fa-archive"></i> Cabina armadio su misura</li>
+                                <li><i class="fas fa-bath"></i> Bagno privato con vasca e doccia</li>
+                                <li><i class="fas fa-door-closed"></i> Accesso indipendente</li>
+                                <li><i class="fas fa-tv"></i> Predisposizione home theater</li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div id="gallery-tab" class="modal-tab-content">
-                <h2>Galleria Immagini</h2>
-                <p>Scopri attraverso le immagini la qualità costruttiva e l'attenzione ai dettagli che caratterizzano le Ville Ozon Flame.</p>
-                <div class="modal-gallery-grid">
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Vista esterna delle ville')">
-                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Vista esterna delle ville">
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-4-page-0001.jpg', 'Piano Terzo')">
+                            <img src="pdf-4-page-0001.jpg" alt="Piano Terzo">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Piano Terzo</h3>
+                            <p>Locale sottotetto versatile e spazioso, perfetto per studio, sala hobby o ulteriore camera da letto.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-couch"></i> Spazio versatile e personalizzabile</li>
+                                <li><i class="fas fa-window-maximize"></i> Lucernari per illuminazione naturale</li>
+                                <li><i class="fas fa-boxes"></i> Ampio spazio storage integrato</li>
+                                <li><i class="fas fa-plus"></i> Possibilità di personalizzazione</li>
+                                <li><i class="fas fa-door-open"></i> Accesso indipendente</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('doc1_page-0001.png', 'Logo Ozon Flame')">
-                        <img src="doc1_page-0001.png" alt="Logo Ozon Flame">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('pdf-1-page-0001.jpg', 'Piano Terra')">
-                        <img src="pdf-1-page-0001.jpg" alt="Piano Terra">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('pdf-2-page-0001.jpg', 'Piano Primo')">
-                        <img src="pdf-2-page-0001.jpg" alt="Piano Primo">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Prospetti Esterni')">
-                        <img src="pdf-3-page-0001.jpg" alt="Prospetti Esterni">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Vista panoramica')">
-                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Vista panoramica">
-                    </div>
-                </div>
-            </div>
-            
-            <div id="video-tab" class="modal-tab-content">
-                <h2>Video Presentazione</h2>
-                <p>Guarda il video di presentazione delle Ville Ozon Flame per scoprire tutti i dettagli del progetto.</p>
-                
-                <div class="modal-video-container">
-                    <h3>Tour Virtuale delle Ville</h3>
-                    <div class="modal-video-wrapper">
-                        <video class="modal-video" controls>
-                            <source src="whatsapp-video-2025-09-04-173320.mp4" type="video/mp4">						
-                        </video>
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-5-page-0001.jpg', 'Prospetto Frontale')">
+                            <img src="pdf-5-page-0001.jpg" alt="Prospetto Frontale">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>Prospetto Frontale</h3>
+                            <p>Vista su Via Morandi con design moderno ed elegante che si integra perfettamente con il contesto urbano.</p>
+                            <ul class="modal-plan-features">
+                                <li><i class="fas fa-home"></i> Design contemporaneo e lineare</li>
+                                <li><i class="fas fa-tree"></i> Integrazione con contesto naturale</li>
+                                <li><i class="fas fa-palette"></i> Finiture di pregio e materiali selezionati</li>
+                                <li><i class="fas fa-parking"></i> Zona esterna curata e privata</li>
+                                <li><i class="fas fa-paint-roller"></i> Facciata con rivestimento di qualità</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1188,21 +1325,35 @@
     </div>
 
     <script>
-        // Funzione per aprire il modale dei dettagli
-        function openDetailsModal() {
-            document.getElementById('detailsModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Previene lo scroll della pagina
+        // Funzione per aprire il modale dei dettagli specifico per progetto
+        function openDetailsModal(projectId) {
+            document.getElementById('detailsModal-' + projectId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
         
         // Funzione per chiudere il modale dei dettagli
-        function closeDetailsModal() {
-            document.getElementById('detailsModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Riabilita lo scroll della pagina
+        function closeDetailsModal(projectId) {
+            document.getElementById('detailsModal-' + projectId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Ferma tutti i video quando si chiude il modale
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.pause();
+                video.currentTime = 0;
+            });
         }
         
         // Funzione per cambiare tab nel modale
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
+            
+            // Ferma tutti i video quando si cambia tab
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.pause();
+                video.currentTime = 0;
+            });
             
             // Nascondi tutti i contenuti delle tab
             tabcontent = document.getElementsByClassName("modal-tab-content");
@@ -1240,10 +1391,14 @@
                 closeZoomModal();
             }
             
-            var detailsModal = document.getElementById('detailsModal');
-            if (event.target == detailsModal) {
-                closeDetailsModal();
-            }
+            // Chiudi tutti i modali dei dettagli
+            var detailModals = document.querySelectorAll('.details-modal');
+            detailModals.forEach(function(modal) {
+                if (event.target == modal) {
+                    var projectId = modal.id.replace('detailsModal-', '');
+                    closeDetailsModal(projectId);
+                }
+            });
         }
         
         // Smooth scrolling per i link interni
@@ -1273,6 +1428,40 @@
             } else {
                 header.style.padding = '0';
                 header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Simple form validation
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                const project = document.getElementById('project').value;
+                
+                if (name && email && message && project) {
+                    alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
+                    contactForm.reset();
+                } else {
+                    alert('Per favore, compila tutti i campi obbligatori.');
+                }
+            });
+        }
+
+        // Chiudi con tasto ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeZoomModal();
+                var detailModals = document.querySelectorAll('.details-modal');
+                detailModals.forEach(function(modal) {
+                    if (modal.style.display === 'block') {
+                        var projectId = modal.id.replace('detailsModal-', '');
+                        closeDetailsModal(projectId);
+                    }
+                });
             }
         });
     </script>
