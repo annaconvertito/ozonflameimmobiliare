@@ -724,6 +724,32 @@
             transform: scale(1.08);
         }
         
+        /* Stili per il video */
+        .modal-video-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .modal-video-container h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .modal-video-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .modal-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         /* Modal per zoom immagini */
         .zoom-modal {
             display: none;
@@ -878,6 +904,10 @@
                 height: 40px;
                 font-size: 30px;
             }
+            
+            .modal-video-wrapper {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -1014,6 +1044,7 @@
                 <div class="modal-tab active" onclick="openTab(event, 'features-tab')">Caratteristiche</div>
                 <div class="modal-tab" onclick="openTab(event, 'plans-tab')">Planimetrie</div>
                 <div class="modal-tab" onclick="openTab(event, 'gallery-tab')">Galleria</div>
+                <div class="modal-tab" onclick="openTab(event, 'video-tab')">Video</div>
             </div>
             
             <div id="features-tab" class="modal-tab-content active">
@@ -1090,50 +1121,18 @@
                         </div>
                     </div>
                     <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Piano Secondo')">
-                            <img src="pdf-3-page-0001.jpg" alt="Piano Secondo">
+                        <div class="modal-plan-image" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Prospetti Esterni')">
+                            <img src="pdf-3-page-0001.jpg" alt="Prospetti Esterni">
                         </div>
                         <div class="modal-plan-content">
-                            <h3>Piano Secondo</h3>
-                            <p>Suite padronale con camera matrimoniale, cabina armadio e bagno privato. Uno spazio esclusivo e raffinato.</p>
+                            <h3>Prospetti Esterni</h3>
+                            <p>Design contemporaneo con finiture di pregio e attenzione ai dettagli architettonici che caratterizzano l'intero complesso.</p>
                             <ul class="modal-plan-features">
-                                <li><i class="fas fa-bed"></i> Camera matrimoniale con zona relax</li>
-                                <li><i class="fas fa-archive"></i> Cabina armadio su misura</li>
-                                <li><i class="fas fa-bath"></i> Bagno privato con vasca e doccia</li>
-                                <li><i class="fas fa-door-closed"></i> Accesso indipendente</li>
-                                <li><i class="fas fa-tv"></i> Predisposizione home theater</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-4-page-0001.jpg', 'Piano Terzo')">
-                            <img src="pdf-4-page-0001.jpg" alt="Piano Terzo">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Piano Terzo</h3>
-                            <p>Locale sottotetto versatile e spazioso, perfetto per studio, sala hobby o ulteriore camera da letto.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-couch"></i> Spazio versatile e personalizzabile</li>
-                                <li><i class="fas fa-window-maximize"></i> Lucernari per illuminazione naturale</li>
-                                <li><i class="fas fa-boxes"></i> Ampio spazio storage integrato</li>
-                                <li><i class="fas fa-plus"></i> Possibilità di personalizzazione</li>
-                                <li><i class="fas fa-door-open"></i> Accesso indipendente</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-5-page-0001.jpg', 'Prospetto Frontale')">
-                            <img src="pdf-5-page-0001.jpg" alt="Prospetto Frontale">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Prospetto Frontale</h3>
-                            <p>Vista su Via Morandi con design moderno ed elegante che si integra perfettamente con il contesto urbano.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-home"></i> Design contemporaneo e lineare</li>
-                                <li><i class="fas fa-tree"></i> Integrazione con contesto naturale</li>
-                                <li><i class="fas fa-palette"></i> Finiture di pregio e materiali selezionati</li>
-                                <li><i class="fas fa-parking"></i> Zona esterna curata e privata</li>
-                                <li><i class="fas fa-paint-roller"></i> Facciata con rivestimento di qualità</li>
+                                <li><i class="fas fa-paint-roller"></i> Facciata con intonaco a rasatura</li>
+                                <li><i class="fas fa-th"></i> Zoccolatura in pietra naturale</li>
+                                <li><i class="fas fa-lightbulb"></i> Illuminazione esterna a LED</li>
+                                <li><i class="fas fa-car"></i> Parcheggio privato scoperto</li>
+                                <li><i class="fas fa-seedling"></i> Sistemazione a verde degli spazi esterni</li>
                             </ul>
                         </div>
                     </div>
@@ -1142,56 +1141,91 @@
             
             <div id="gallery-tab" class="modal-tab-content">
                 <h2>Galleria Immagini</h2>
-                <p>Scopri attraverso le immagini la qualità costruttiva e l'eleganza delle Ville Ozon Flame. Clicca sulle immagini per ingrandirle.</p>
+                <p>Scopri attraverso le immagini la qualità costruttiva e l'attenzione ai dettagli che caratterizzano le Ville Ozon Flame.</p>
                 <div class="modal-gallery-grid">
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Esterno villa')">
-                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Esterno villa">
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Vista esterna delle ville')">
+                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Vista esterna delle ville">
                     </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-1.jpeg', 'Interno moderno')">
-                        <img src="whatsapp-2025-09-15-15-26-23-1.jpeg" alt="Interno moderno">
+                    <div class="modal-gallery-item" onclick="openZoomModal('doc1_page-0001.png', 'Logo Ozon Flame')">
+                        <img src="doc1_page-0001.png" alt="Logo Ozon Flame">
                     </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-4.jpeg', 'Prospetto frontale')">
-                        <img src="whatsapp-2025-09-15-15-26-23-4.jpeg" alt="Prospetto frontale">
+                    <div class="modal-gallery-item" onclick="openZoomModal('pdf-1-page-0001.jpg', 'Piano Terra')">
+                        <img src="pdf-1-page-0001.jpg" alt="Piano Terra">
                     </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-1.jpeg', 'Dettaglio esterno')">
-                        <img src="whatsapp-2025-09-15-15-26-28-1.jpeg" alt="Dettaglio esterno">
+                    <div class="modal-gallery-item" onclick="openZoomModal('pdf-2-page-0001.jpg', 'Piano Primo')">
+                        <img src="pdf-2-page-0001.jpg" alt="Piano Primo">
                     </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-3.jpeg', 'Vista laterale')">
-                        <img src="whatsapp-2025-09-15-15-26-28-3.jpeg" alt="Vista laterale">
+                    <div class="modal-gallery-item" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Prospetti Esterni')">
+                        <img src="pdf-3-page-0001.jpg" alt="Prospetti Esterni">
                     </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-4.jpeg', 'Dettaglio costruzione')">
-                        <img src="whatsapp-2025-09-15-15-26-28-4.jpeg" alt="Dettaglio costruzione">
+                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Vista panoramica')">
+                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Vista panoramica">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="video-tab" class="modal-tab-content">
+                <h2>Video Presentazione</h2>
+                <p>Guarda il video di presentazione delle Ville Ozon Flame per scoprire tutti i dettagli del progetto.</p>
+                
+                <div class="modal-video-container">
+                    <h3>Tour Virtuale delle Ville</h3>
+                    <div class="modal-video-wrapper">
+                        <video class="modal-video" controls>
+                            <source src="whatsapp-video-2025-09-04-173320.mp4" type="video/mp4">						
+                        </video>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal per zoom immagini -->
+    <!-- Modale per zoom immagini -->
     <div id="zoomModal" class="zoom-modal">
         <span class="zoom-modal-close" onclick="closeZoomModal()">&times;</span>
-        <img class="zoom-modal-content" id="zoomedImage">
-        <div class="zoom-modal-caption" id="zoomCaption"></div>
+        <img class="zoom-modal-content" id="zoomedImg">
+        <div id="zoomCaption" class="zoom-modal-caption"></div>
     </div>
 
     <script>
         // Funzione per aprire il modale dei dettagli
         function openDetailsModal() {
             document.getElementById('detailsModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Previene lo scroll della pagina
         }
         
         // Funzione per chiudere il modale dei dettagli
         function closeDetailsModal() {
             document.getElementById('detailsModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Riabilita lo scroll della pagina
+        }
+        
+        // Funzione per cambiare tab nel modale
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Nascondi tutti i contenuti delle tab
+            tabcontent = document.getElementsByClassName("modal-tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Rimuovi la classe active da tutti i tab
+            tablinks = document.getElementsByClassName("modal-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            // Mostra la tab corrente e aggiungi la classe active al bottone
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
         
         // Funzione per aprire il modale di zoom
-        function openZoomModal(imageSrc, caption) {
+        function openZoomModal(src, caption) {
             document.getElementById('zoomModal').style.display = 'block';
-            document.getElementById('zoomedImage').src = imageSrc;
-            document.getElementById('zoomCaption').textContent = caption;
+            document.getElementById('zoomedImg').src = src;
+            document.getElementById('zoomCaption').innerHTML = caption;
         }
         
         // Funzione per chiudere il modale di zoom
@@ -1199,52 +1233,29 @@
             document.getElementById('zoomModal').style.display = 'none';
         }
         
-        // Chiudi i modali se si clicca al di fuori del contenuto
+        // Chiudi i modali cliccando fuori dall'immagine
         window.onclick = function(event) {
-            const detailsModal = document.getElementById('detailsModal');
-            const zoomModal = document.getElementById('zoomModal');
-            
-            if (event.target == detailsModal) {
-                closeDetailsModal();
-            }
+            var zoomModal = document.getElementById('zoomModal');
             if (event.target == zoomModal) {
                 closeZoomModal();
             }
-        }
-        
-        // Chiudi i modali con il tasto ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
+            
+            var detailsModal = document.getElementById('detailsModal');
+            if (event.target == detailsModal) {
                 closeDetailsModal();
-                closeZoomModal();
             }
-        });
-        
-        // Gestione delle tab nel modale
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName('modal-tab-content');
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove('active');
-            }
-            
-            const tabs = document.getElementsByClassName('modal-tab');
-            for (let i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-            }
-            
-            document.getElementById(tabName).classList.add('active');
-            evt.currentTarget.classList.add('active');
         }
         
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
+        // Smooth scrolling per i link interni
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1252,25 +1263,18 @@
                 }
             });
         });
-
-        // Simple form validation
-        const contactForm = document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                
-                if (name && email && message) {
-                    alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
-                    contactForm.reset();
-                } else {
-                    alert('Per favore, compila tutti i campi obbligatori.');
-                }
-            });
-        }
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.padding = '0';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
     </script>
 </body>
 </html>
