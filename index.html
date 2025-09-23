@@ -30,6 +30,7 @@
             color: var(--text);
             background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
             padding-top: 80px;
+            font-size: 16px; /* Base font size for better mobile readability */
         }
         
         .container {
@@ -38,7 +39,7 @@
             margin: 0 auto;
         }
         
-        /* Header */
+        /* Header - Miglioramenti Mobile */
         header {
             background: linear-gradient(to right, var(--primary-dark), var(--primary));
             color: white;
@@ -83,6 +84,28 @@
         
         .logo-text span:first-child {
             color: var(--accent);
+        }
+        
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: var(--transition);
         }
         
         nav ul {
@@ -821,37 +844,128 @@
             background: rgba(0,0,0,0.6);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0.5rem;
-            }
-            
+        /* Responsive - MIGLIORAMENTI MOBILE */
+        @media (max-width: 1024px) {
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .hero-content p {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+            }
+            
+            section h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+                font-size: 14px; /* Leggermente più piccolo per mobile */
+            }
+            
+            .header-container {
+                flex-direction: row;
+                padding: 0.5rem 5%;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(to right, var(--primary-dark), var(--primary));
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
+                transition: var(--transition);
+            }
+            
+            nav.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                border-radius: 0;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                height: 60vh;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .project-card {
+                margin-bottom: 1rem;
+            }
+            
+            .project-image {
+                height: 200px;
+            }
+            
+            .project-content {
+                padding: 1.2rem;
+            }
+            
+            .project-content h3 {
+                font-size: 1.3rem;
             }
             
             .contact-content {
                 flex-direction: column;
+                gap: 2rem;
             }
             
             .contact-details p {
@@ -864,6 +978,7 @@
             
             .modal-tab {
                 padding: 1rem;
+                font-size: 1rem;
             }
             
             .modal-tab-content {
@@ -872,10 +987,24 @@
             
             .modal-plans-container {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .modal-features-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .modal-feature-card {
+                padding: 1.5rem;
+            }
+            
+            .modal-feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .modal-feature-card h3 {
+                font-size: 1.3rem;
             }
             
             .details-modal-close {
@@ -891,7 +1020,11 @@
             }
             
             .modal-header h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .modal-header p {
+                font-size: 1rem;
             }
             
             .zoom-modal-content {
@@ -909,6 +1042,95 @@
             .modal-video-wrapper {
                 max-width: 100%;
             }
+            
+            .modal-gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            
+            .modal-gallery-item {
+                height: 200px;
+            }
+            
+            .footer-content p {
+                font-size: 1rem;
+            }
+            
+            .social-links a {
+                font-size: 1.3rem;
+                margin: 0 0.5rem;
+            }
+            
+            /* Miglioramenti per input su mobile */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px; /* Previene lo zoom automatico su iOS */
+                padding: 0.9rem 1rem; /* Più spazio per il tocco */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 50vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .projects-intro {
+                font-size: 1rem;
+            }
+            
+            .project-feature {
+                font-size: 0.8rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .modal-tab-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .modal-feature-card {
+                padding: 1rem;
+            }
+            
+            .modal-plan-content {
+                padding: 1.5rem;
+            }
+            
+            .modal-plan-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .modal-plan-features li {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Stili per il menu hamburger attivo */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
         }
     </style>
 </head>
@@ -920,6 +1142,11 @@
                 <img src="doc1_page-0001.png" alt="OZON FLAME Logo" style="width: 50px; height: 50px;">
                 <div class="logo-text"><span>OZON</span><span>FLAME</span></div>
             </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -1029,7 +1256,7 @@
                         </div>
                         <div class="form-group">
                             <label for="project">Progetto di interesse</label>
-                            <select id="project" required>
+                            <select id="project">
                                 <option value="">Seleziona un progetto</option>
                                 <option value="via-catena">Via Catena</option>
                                 <option value="ville-ozon-flame">Ville Ozon Flame</option>
@@ -1039,7 +1266,7 @@
                             <label for="message">Messaggio</label>
                             <textarea id="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Invia richiesta</button>
+                        <button type="submit" class="btn">Invia Richiesta</button>
                     </form>
                 </div>
             </div>
@@ -1048,440 +1275,352 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
-            <div class="logo">
-                <span>OZON</span><span>FLAME</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo"><span>OZON</span><span>FLAME</span></div>
+                <p>Ozon Flame Immobiliare - Eccellenza costruttiva e innovazione abitativa a Caserta</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>&copy; 2025 Ozon Flame Immobiliare. Tutti i diritti riservati.</p>
             </div>
-            <p>Eccellenza costruttiva e innovazione abitativa</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <p>&copy; 2025 Ozon Flame Immobiliare. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
-    <!-- Modale Dettagli per Via Catena -->
-    <div id="detailsModal-via-catena" class="details-modal">
+    <!-- Modal per dettagli progetti -->
+    <div id="details-modal" class="details-modal">
+        <span class="details-modal-close">&times;</span>
         <div class="details-modal-content">
-            <span class="details-modal-close" onclick="closeDetailsModal('via-catena')">&times;</span>
-            
             <div class="modal-header">
-                <h2>Progetto Via Catena</h2>
-                <p>Nuovo complesso residenziale di prestigio in costruzione</p>
+                <h2 id="modal-title">Titolo Progetto</h2>
+                <p id="modal-subtitle">Sottotitolo del progetto</p>
             </div>
-            
             <div class="modal-tabs">
-                <div class="modal-tab active" onclick="openTab(event, 'features-tab-catena')">Caratteristiche</div>
-                <div class="modal-tab" onclick="openTab(event, 'gallery-tab-catena')">Galleria</div>
+                <div class="modal-tab active" data-tab="overview">Panoramica</div>
+                <div class="modal-tab" data-tab="features">Caratteristiche</div>
+                <div class="modal-tab" data-tab="plans">Planimetrie</div>
+                <div class="modal-tab" data-tab="gallery">Galleria</div>
             </div>
             
-            <div id="features-tab-catena" class="modal-tab-content active">
-                <h2>Caratteristiche del Progetto</h2>
-                <p>Il complesso residenziale di Via Catena rappresenta l'evoluzione del concetto abitativo moderno, unendo comfort, tecnologia e design.</p>
-                <div class="modal-features-grid">
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🏗️</div>
-                        <h3>Struttura Moderna</h3>
-                        <p>Edificio realizzato con tecniche costruttive all'avanguardia e materiali di prima qualità per garantire massima sicurezza e durabilità.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">⚡</div>
-                        <h3>Efficienza Energetica</h3>
-                        <p>Classe energetica A con isolamento termico avanzato, impianto fotovoltaico e sistemi per il risparmio energetico.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🚗</div>
-                        <h3>Parcheggio Riservato</h3>
-                        <p>Ampio parcheggio scoperto con posti auto riservati per ogni unità abitativa e ospiti.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🌿</div>
-                        <h3>Spazi Verdi</h3>
-                        <p>Area verde comune curata con piante autoctone e spazi relax per i residenti.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🔒</div>
-                        <h3>Sicurezza</h3>
-                        <p>Sistema di videosorveglianza, controllo accessi e infissi di sicurezza per totale tranquillità.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🏠</div>
-                        <h3>Finiture di Qualità</h3>
-                        <p>Materiali selezionati, pavimenti in gres porcellanato, sanitari di design e cucine complete.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="gallery-tab-catena" class="modal-tab-content">
-                <h2>Galleria Lavori</h2>
-                <p>Documentazione fotografica dello stato di avanzamento dei lavori del complesso di Via Catena.</p>
-                <div class="modal-gallery-grid">
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.50.52.jpeg', 'Prospetto principale')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.50.59.jpeg" alt="Prospetto principale">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.50.56.jpeg', 'Dettaglio costruttivo')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.50.56.jpeg" alt="Dettaglio costruttivo">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.01.jpeg', 'Vista laterale')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.51.01.jpeg" alt="Vista laterale">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.03.jpeg', 'Particolare facciata')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.51.03.jpeg" alt="Particolare facciata">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.06.jpeg', 'Area cantieristica')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.51.06.jpeg" alt="Area cantieristica">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.30.jpeg', 'Vista d\'insieme')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.51.30.jpeg" alt="Vista d'insieme">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.39.jpeg', 'Dettaglio strutturale')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.51.39.jpeg" alt="Dettaglio strutturale">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.51.51.jpeg', 'Particolare costruzione')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.51.51.jpeg" alt="Particolare costruzione">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('WhatsApp Image 2025-09-16 at 14.59.46.jpeg', 'Panoramica cantiere')">
-                        <img src="WhatsApp Image 2025-09-16 at 14.59.46.jpeg" alt="Panoramica cantiere">
-                    </div>
-                </div>
-            </div>
-            
-           
-            </div>
-        </div>
-    </div>
-
-    <!-- Modale Dettagli per Ville Ozon Flame -->
-    <div id="detailsModal-ville-ozon-flame" class="details-modal">
-        <div class="details-modal-content">
-            <span class="details-modal-close" onclick="closeDetailsModal('ville-ozon-flame')">&times;</span>
-            
-            <div class="modal-header">
-                <h2>Ville Ozon Flame</h2>
-                <p>Esclusivo complesso di 5 ville a schiera indipendenti - Completato</p>
-            </div>
-            
-            <div class="modal-tabs">
-                <div class="modal-tab active" onclick="openTab(event, 'features-tab-ville')">Caratteristiche</div>
-                <div class="modal-tab" onclick="openTab(event, 'gallery-tab-ville')">Galleria</div>
-                <div class="modal-tab" onclick="openTab(event, 'plans-tab-ville')">Planimetrie</div>
-                <div class="modal-tab" onclick="openTab(event, 'video-tab-ville')">Video</div>
-            </div>
-            
-            <div id="features-tab-ville" class="modal-tab-content active">
-                <h2>Caratteristiche delle Ville</h2>
-                <p>Le Ville Ozon Flame rappresentano l'eccellenza abitativa, con attenzione ai dettagli, qualità dei materiali e soluzioni tecnologiche all'avanguardia.</p>
-                <div class="modal-features-grid">
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">⚡</div>
-                        <h3>Efficienza Energetica</h3>
-                        <p>5 unità abitative completamente indipendenti in classe energetica "A" con isolamento termico avanzato e ridotte dispersioni energetiche.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🏠</div>
-                        <h3>Struttura Antisismica</h3>
-                        <p>Progettate nel totale rispetto della normativa antisismica con materiali di prima qualità e tecniche costruttive all'avanguardia.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">☀️</div>
-                        <h3>Impianto Fotovoltaico</h3>
-                        <p>Impianto fotovoltaico 3KW completo predisposto al sistema di accumulo per massimizzare l'autonomia energetica e ridurre i costi.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🔒</div>
-                        <h3>Serramenti di Qualità</h3>
-                        <p>Infissi in PVC a taglio termico e porte esterne in ferro blindate per massima sicurezza ed efficienza energetica.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🏊</div>
-                        <h3>Personalizzazioni</h3>
-                        <p>Possibilità di realizzare piscina nel cortile interno su richiesta e personalizzazioni degli spazi in base alle esigenze.</p>
-                    </div>
-                    <div class="modal-feature-card">
-                        <div class="modal-feature-icon">🌿</div>
-                        <h3>Spazi Verdi</h3>
-                        <p>Ampi spazi esterni privati e aree verdi comuni con piante autoctone e sistemi di irrigazione efficienti.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="gallery-tab-ville" class="modal-tab-content">
-                <h2>Galleria Immagini</h2>
-                <p>Scopri attraverso le immagini la qualità costruttiva e l'eleganza delle Ville Ozon Flame.</p>
-                <div class="modal-gallery-grid">
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-2.jpeg', 'Esterno villa')">
-                        <img src="whatsapp-2025-09-15-15-26-23-2.jpeg" alt="Esterno villa">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-1.jpeg', 'Interno moderno')">
-                        <img src="whatsapp-2025-09-15-15-26-23-1.jpeg" alt="Interno moderno">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-1.jpeg', 'Dettaglio esterno')">
-                        <img src="whatsapp-2025-09-15-15-26-28-1.jpeg" alt="Dettaglio esterno">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-3.jpeg', 'Vista laterale')">
-                        <img src="whatsapp-2025-09-15-15-26-28-3.jpeg" alt="Vista laterale">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-28-4.jpeg', 'Dettaglio costruzione')">
-                        <img src="whatsapp-2025-09-15-15-26-28-4.jpeg" alt="Dettaglio costruzione">
-                    </div>
-                    <div class="modal-gallery-item" onclick="openZoomModal('whatsapp-2025-09-15-15-26-23-4.jpeg', 'Prospetto frontale')">
-                        <img src="whatsapp-2025-09-15-15-26-23-4.jpeg" alt="Prospetto frontale">
-                    </div>
-                </div>
-            </div>
-            
-            <div id="plans-tab-ville" class="modal-tab-content">
-                <h2>Planimetrie delle Ville</h2>
-                <p>Le ville sono sviluppate su più livelli con spazi ben distribuiti e ottimizzati per garantire comfort e funzionalità. Clicca sulle planimetrie per ingrandirle.</p>
-                <div class="modal-plans-container">
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-1-page-0001.jpg', 'Piano Terra')">
-                            <img src="pdf-1-page-0001.jpg" alt="Piano Terra">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Piano Terra</h3>
-                            <p>Ampio soggiorno open space, cucina abitabile, bagno di servizio e spazio esterno privato con accesso indipendente.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-door-open"></i> Ingresso indipendente</li>
-                                <li><i class="fas fa-utensils"></i> Cucina abitabile con isola centrale</li>
-                                <li><i class="fas fa-couch"></i> Soggiorno luminoso con ampia vetrata</li>
-                                <li><i class="fas fa-toilet"></i> Bagno di servizio con doccia</li>
-                                <li><i class="fas fa-tree"></i> Veranda esterna coperta</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-2-page-0001.jpg', 'Piano Primo')">
-                            <img src="pdf-2-page-0001.jpg" alt="Piano Primo">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Piano Primo</h3>
-                            <p>Camera matrimoniale, camera singola, bagno completo e ripostiglio. Layout ottimizzato per comfort e privacy.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-bed"></i> Camera matrimoniale con vista</li>
-                                <li><i class="fas fa-bed"></i> Camera singola con armadio a muro</li>
-                                <li><i class="fas fa-bath"></i> Bagno completo con box doccia</li>
-                                <li><i class="fas fa-box"></i> Ripostiglio/ lavanderia</li>
-                                <li><i class="fas fa-window-maximize"></i> Ampio corridoio di distribuzione</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-3-page-0001.jpg', 'Piano Secondo')">
-                            <img src="pdf-3-page-0001.jpg" alt="Piano Secondo">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Piano Secondo</h3>
-                            <p>Suite padronale con camera matrimoniale, cabina armadio e bagno privato. Uno spazio esclusivo e raffinato.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-bed"></i> Camera matrimoniale con zona relax</li>
-                                <li><i class="fas fa-archive"></i> Cabina armadio su misura</li>
-                                <li><i class="fas fa-bath"></i> Bagno privato con vasca e doccia</li>
-                                <li><i class="fas fa-door-closed"></i> Accesso indipendente</li>
-                                <li><i class="fas fa-tv"></i> Predisposizione home theater</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-4-page-0001.jpg', 'Piano Terzo')">
-                            <img src="pdf-4-page-0001.jpg" alt="Piano Terzo">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Piano Terzo</h3>
-                            <p>Locale sottotetto versatile e spazioso, perfetto per studio, sala hobby o ulteriore camera da letto.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-couch"></i> Spazio versatile e personalizzabile</li>
-                                <li><i class="fas fa-window-maximize"></i> Lucernari per illuminazione naturale</li>
-                                <li><i class="fas fa-boxes"></i> Ampio spazio storage integrato</li>
-                                <li><i class="fas fa-plus"></i> Possibilità di personalizzazione</li>
-                                <li><i class="fas fa-door-open"></i> Accesso indipendente</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-plan-card">
-                        <div class="modal-plan-image" onclick="openZoomModal('pdf-5-page-0001.jpg', 'Prospetto Frontale')">
-                            <img src="pdf-5-page-0001.jpg" alt="Prospetto Frontale">
-                        </div>
-                        <div class="modal-plan-content">
-                            <h3>Prospetto Frontale</h3>
-                            <p>Vista su Via Morandi con design moderno ed elegante che si integra perfettamente con il contesto urbano.</p>
-                            <ul class="modal-plan-features">
-                                <li><i class="fas fa-home"></i> Design contemporaneo e lineare</li>
-                                <li><i class="fas fa-tree"></i> Integrazione con contesto naturale</li>
-                                <li><i class="fas fa-palette"></i> Finiture di pregio e materiali selezionati</li>
-                                <li><i class="fas fa-parking"></i> Zona esterna curata e privata</li>
-                                <li><i class="fas fa-paint-roller"></i> Facciata con rivestimento di qualità</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="video-tab-ville" class="modal-tab-content">
-                <h2>Video Presentazione</h2>
-                <p>Guarda il video di presentazione delle Ville Ozon Flame.</p>
+            <div class="modal-tab-content active" id="overview-content">
+                <h2>Panoramica del Progetto</h2>
+                <p id="modal-overview">Descrizione del progetto...</p>
                 
                 <div class="modal-video-container">
-                    <h3>Tour Virtuale</h3>
+                    <h3>Video del Progetto</h3>
                     <div class="modal-video-wrapper">
-                        <video class="modal-video" controls playsinline>
-                            <source src="whatsapp-video-2025-09-04-173320.mp4" type="video/mp4">
-                            Il tuo browser non supporta la riproduzione video.
+                        <video class="modal-video" controls>
+                            <source src="video-progetto.mp4" type="video/mp4">
+                            Il tuo browser non supporta il tag video.
                         </video>
                     </div>
                 </div>
             </div>
+            
+            <div class="modal-tab-content" id="features-content">
+                <h2>Caratteristiche Tecniche</h2>
+                <div class="modal-features-grid">
+                    <!-- Le caratteristiche verranno inserite dinamicamente -->
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="plans-content">
+                <h2>Planimetrie</h2>
+                <div class="modal-plans-container">
+                    <!-- Le planimetrie verranno inserite dinamicamente -->
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="gallery-content">
+                <h2>Galleria Immagini</h2>
+                <div class="modal-gallery-grid">
+                    <!-- Le immagini verranno inserite dinamicamente -->
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modale per zoom immagini -->
-    <div id="zoomModal" class="zoom-modal">
-        <span class="zoom-modal-close" onclick="closeZoomModal()">&times;</span>
-        <img class="zoom-modal-content" id="zoomedImg">
-        <div id="zoomCaption" class="zoom-modal-caption"></div>
+    <!-- Modal per zoom immagini -->
+    <div id="zoom-modal" class="zoom-modal">
+        <span class="zoom-modal-close">&times;</span>
+        <img class="zoom-modal-content" id="zoomed-img">
+        <div id="zoom-caption" class="zoom-modal-caption"></div>
     </div>
 
     <script>
-        // Funzione per aprire il modale dei dettagli specifico per progetto
+        // Dati dei progetti
+        const projectsData = {
+            'via-catena': {
+                title: 'Via Catena',
+                subtitle: 'Nuovo complesso residenziale di prestigio',
+                overview: 'Il complesso residenziale di Via Catena rappresenta l\'eccellenza costruttiva nel cuore di Caserta. Concepito per offrire il massimo comfort abitativo, questo progetto unisce design contemporaneo, efficienza energetica e materiali di alta qualità. Gli appartamenti, disponibili in diverse metrature, sono dotati di ampi spazi vivibili, finiture di pregio e tecnologie innovative per una vita moderna e sostenibile.',
+                features: [
+                    {
+                        icon: 'fas fa-home',
+                        title: 'Design Architettonico',
+                        description: 'Architettura contemporanea con linee pulite e volumi ben definiti che creano spazi armoniosi e funzionali.'
+                    },
+                    {
+                        icon: 'fas fa-leaf',
+                        title: 'Efficienza Energetica',
+                        description: 'Classe energetica A4 con isolamento termico avanzato, impianto fotovoltaico e sistemi di riscaldamento a basso consumo.'
+                    },
+                    {
+                        icon: 'fas fa-shield-alt',
+                        title: 'Sicurezza e Comfort',
+                        description: 'Struttura antisismica, impianti elettrici a norma, sistemi di ventilazione controllata e domotica avanzata.'
+                    },
+                    {
+                        icon: 'fas fa-parking',
+                        title: 'Parcheggio e Servizi',
+                        description: 'Ampio parcheggio privato, ascensore, locale bici e spazi comuni curati nel dettaglio.'
+                    }
+                ],
+                plans: [
+                    {
+                        image: 'plan1.jpg',
+                        title: 'Appartamento Tipo A - 75 mq',
+                        description: 'Soluzione bilocale con soggiorno/cucina open space, camera da letto, bagno e ampio balcone.',
+                        features: ['Soggiorno/Cucina open space', 'Camera matrimoniale', 'Bagno con box doccia', 'Balcone 12 mq']
+                    },
+                    {
+                        image: 'plan2.jpg',
+                        title: 'Appartamento Tipo B - 95 mq',
+                        description: 'Trilocale con soggiorno separato, cucina, due camere da letto, due bagni e terrazzo.',
+                        features: ['Soggiorno luminoso', 'Cucina abitabile', '2 camere da letto', '2 bagni (1 en suite)', 'Terrazzo 15 mq']
+                    },
+                    {
+                        image: 'plan3.jpg',
+                        title: 'Appartamento Tipo C - 120 mq',
+                        description: 'Ampia soluzione quadrilocale con zona giorno open space, tre camere, due bagni e doppi terrazzi.',
+                        features: ['Zona giorno open space', '3 camere da letto', '2 bagni', 'Doppi terrazzi', 'Ripostiglio']
+                    }
+                ],
+                gallery: [
+                    {image: 'gallery1.jpg', caption: 'Vista esterna del complesso'},
+                    {image: 'gallery2.jpg', caption: 'Ingresso principale'},
+                    {image: 'gallery3.jpg', caption: 'Esempio di interno'},
+                    {image: 'gallery4.jpg', caption: 'Zona living'},
+                    {image: 'gallery5.jpg', caption: 'Cucina arredata'},
+                    {image: 'gallery6.jpg', caption: 'Bagno di pregio'}
+                ]
+            },
+            'ville-ozon-flame': {
+                title: 'Ville Ozon Flame',
+                subtitle: 'Esclusivo complesso di 5 ville a schiera indipendenti',
+                overview: 'Le Ville Ozon Flame rappresentano il culmine dell\'eccellenza abitativa a Caserta. Questo esclusivo complesso di 5 ville a schiera indipendenti, situato nella prestigiosa zona Massaro, unisce design contemporaneo, comfort abitativo e sostenibilità. Ogni villa è concepita per offrire spazi ampi e luminosi, finiture di altissima qualità e tecnologie all\'avanguardia per una vita di lusso e benessere.',
+                features: [
+                    {
+                        icon: 'fas fa-building',
+                        title: 'Architettura di Prestigio',
+                        description: 'Ville indipendenti con design architettonico unico, facciate rifinite con materiali di pregio e ampi spazi verdi privati.'
+                    },
+                    {
+                        icon: 'fas fa-solar-panel',
+                        title: 'Autonomia Energetica',
+                        description: 'Impianto fotovoltaico da 6 kW, sistema di accumulo energia, pompa di calore per riscaldamento e raffrescamento.'
+                    },
+                    {
+                        icon: 'fas fa-vector-square',
+                        title: 'Spazi Generosi',
+                        description: 'Superfici da 180 a 220 mq su due livelli, con possibilità di personalizzazione degli interni.'
+                    },
+                    {
+                        icon: 'fas fa-tree',
+                        title: 'Giardino e Terrazzi',
+                        description: 'Ampio giardino privato, terrazzo solarium e verande per godere degli spazi esterni in ogni stagione.'
+                    }
+                ],
+                plans: [
+                    {
+                        image: 'villa-plan1.jpg',
+                        title: 'Villa Tipo A - 180 mq',
+                        description: 'Villa su due livelli con zona giorno open space, tre camere, due bagni, ampio giardino e terrazzo.',
+                        features: ['Zona giorno open space', '3 camere da letto', '2 bagni (1 en suite)', 'Cantina/taverna', 'Giardino 80 mq', 'Terrazzo solarium']
+                    },
+                    {
+                        image: 'villa-plan2.jpg',
+                        title: 'Villa Tipo B - 200 mq',
+                        description: 'Soluzione di prestigio con soggiorno doppia altezza, quattro camere, tre bagni e doppio ingresso.',
+                        features: ['Soggiorno doppia altezza', '4 camere da letto', '3 bagni', 'Studio/ripostiglio', 'Doppio ingresso', 'Giardino 100 mq']
+                    },
+                    {
+                        image: 'villa-plan3.jpg',
+                        title: 'Villa Tipo C - 220 mq',
+                        description: 'Villa di lusso con ampia zona giorno, quattro camere, tre bagni, taverna e garage privato.',
+                        features: ['Ampia zona giorno', '4 camere da letto', '3 bagni', 'Taverna con bagno', 'Garage privato', 'Giardino 120 mq']
+                    }
+                ],
+                gallery: [
+                    {image: 'villa-gallery1.jpg', caption: 'Vista frontale delle ville'},
+                    {image: 'villa-gallery2.jpg', caption: 'Esterno con giardino'},
+                    {image: 'villa-gallery3.jpg', caption: 'Ingresso principale'},
+                    {image: 'villa-gallery4.jpg', caption: 'Soggiorno di rappresentanza'},
+                    {image: 'villa-gallery5.jpg', caption: 'Cucina su misura'},
+                    {image: 'villa-gallery6.jpg', caption: 'Camera padronale'}
+                ]
+            }
+        };
+
+        // Funzione per aprire il modal dei dettagli
         function openDetailsModal(projectId) {
-            document.getElementById('detailsModal-' + projectId).style.display = 'block';
+            const project = projectsData[projectId];
+            if (!project) return;
+            
+            // Imposta titolo e sottotitolo
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-subtitle').textContent = project.subtitle;
+            document.getElementById('modal-overview').textContent = project.overview;
+            
+            // Popola le caratteristiche
+            const featuresGrid = document.querySelector('#features-content .modal-features-grid');
+            featuresGrid.innerHTML = '';
+            project.features.forEach(feature => {
+                featuresGrid.innerHTML += `
+                    <div class="modal-feature-card">
+                        <div class="modal-feature-icon">
+                            <i class="${feature.icon}"></i>
+                        </div>
+                        <h3>${feature.title}</h3>
+                        <p>${feature.description}</p>
+                    </div>
+                `;
+            });
+            
+            // Popola le planimetrie
+            const plansContainer = document.querySelector('#plans-content .modal-plans-container');
+            plansContainer.innerHTML = '';
+            project.plans.forEach(plan => {
+                plansContainer.innerHTML += `
+                    <div class="modal-plan-card">
+                        <div class="modal-plan-image" onclick="openZoomModal('${plan.image}', '${plan.title}')">
+                            <img src="${plan.image}" alt="${plan.title}">
+                        </div>
+                        <div class="modal-plan-content">
+                            <h3>${plan.title}</h3>
+                            <p>${plan.description}</p>
+                            <ul class="modal-plan-features">
+                                ${plan.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // Popola la galleria
+            const galleryGrid = document.querySelector('#gallery-content .modal-gallery-grid');
+            galleryGrid.innerHTML = '';
+            project.gallery.forEach(item => {
+                galleryGrid.innerHTML += `
+                    <div class="modal-gallery-item" onclick="openZoomModal('${item.image}', '${item.caption}')">
+                        <img src="${item.image}" alt="${item.caption}">
+                    </div>
+                `;
+            });
+            
+            // Mostra il modal
+            document.getElementById('details-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Previene lo scroll del body
+        }
+
+        // Funzione per aprire il modal di zoom
+        function openZoomModal(imageSrc, caption) {
+            document.getElementById('zoomed-img').src = imageSrc;
+            document.getElementById('zoom-caption').textContent = caption;
+            document.getElementById('zoom-modal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-        
-        // Funzione per chiudere il modale dei dettagli
-        function closeDetailsModal(projectId) {
-            document.getElementById('detailsModal-' + projectId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-            
-            // Ferma tutti i video quando si chiude il modale
-            var videos = document.querySelectorAll('video');
-            videos.forEach(function(video) {
-                video.pause();
-                video.currentTime = 0;
-            });
-        }
-        
-        // Funzione per cambiare tab nel modale
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            
-            // Ferma tutti i video quando si cambia tab
-            var videos = document.querySelectorAll('video');
-            videos.forEach(function(video) {
-                video.pause();
-                video.currentTime = 0;
-            });
-            
-            // Nascondi tutti i contenuti delle tab
-            tabcontent = document.getElementsByClassName("modal-tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-            
-            // Rimuovi la classe active da tutti i tab
-            tablinks = document.getElementsByClassName("modal-tab");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            
-            // Mostra la tab corrente e aggiungi la classe active al bottone
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-        
-        // Funzione per aprire il modale di zoom
-        function openZoomModal(src, caption) {
-            document.getElementById('zoomModal').style.display = 'block';
-            document.getElementById('zoomedImg').src = src;
-            document.getElementById('zoomCaption').innerHTML = caption;
-        }
-        
-        // Funzione per chiudere il modale di zoom
-        function closeZoomModal() {
-            document.getElementById('zoomModal').style.display = 'none';
-        }
-        
-        // Chiudi i modali cliccando fuori dall'immagine
-        window.onclick = function(event) {
-            var zoomModal = document.getElementById('zoomModal');
-            if (event.target == zoomModal) {
-                closeZoomModal();
-            }
-            
-            // Chiudi tutti i modali dei dettagli
-            var detailModals = document.querySelectorAll('.details-modal');
-            detailModals.forEach(function(modal) {
-                if (event.target == modal) {
-                    var projectId = modal.id.replace('detailsModal-', '');
-                    closeDetailsModal(projectId);
-                }
-            });
-        }
-        
-        // Smooth scrolling per i link interni
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.padding = '0';
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-            } else {
-                header.style.padding = '0';
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            }
-        });
 
-        // Simple form validation
-        const contactForm = document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                const project = document.getElementById('project').value;
-                
-                if (name && email && message && project) {
-                    alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
-                    contactForm.reset();
-                } else {
-                    alert('Per favore, compila tutti i campi obbligatori.');
-                }
-            });
+        // Chiudi modali
+        function closeModals() {
+            document.getElementById('details-modal').style.display = 'none';
+            document.getElementById('zoom-modal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Riabilita lo scroll del body
         }
 
-        // Chiudi con tasto ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeZoomModal();
-                var detailModals = document.querySelectorAll('.details-modal');
-                detailModals.forEach(function(modal) {
-                    if (modal.style.display === 'block') {
-                        var projectId = modal.id.replace('detailsModal-', '');
-                        closeDetailsModal(projectId);
+        // Gestione menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            
+            // Chiudi menu al click su un link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            
+            // Gestione tab nel modal
+            document.querySelectorAll('.modal-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Rimuovi classe active da tutte le tab e i contenuti
+                    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.modal-tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Aggiungi classe active alla tab e al contenuto selezionati
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}-content`).classList.add('active');
+                });
+            });
+            
+            // Chiudi modali al click sulla X
+            document.querySelectorAll('.details-modal-close, .zoom-modal-close').forEach(closeBtn => {
+                closeBtn.addEventListener('click', closeModals);
+            });
+            
+            // Chiudi modali al click fuori dal contenuto
+            window.addEventListener('click', function(event) {
+                const detailsModal = document.getElementById('details-modal');
+                const zoomModal = document.getElementById('zoom-modal');
+                
+                if (event.target === detailsModal) {
+                    closeModals();
+                }
+                
+                if (event.target === zoomModal) {
+                    closeModals();
+                }
+            });
+            
+            // Smooth scroll per i link interni
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
                     }
                 });
-            }
+            });
+            
+            // Animazione header al scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '0';
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+                } else {
+                    header.style.padding = '0';
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                }
+            });
         });
     </script>
 </body>
